@@ -4,7 +4,7 @@
 
 客户端以为连的是 MySQL，实际上后端是 H2——正如沙漠中的海市蜃楼。
 
-🌐 **中文** | [English](en/README.md)
+**中文** · [English](en/README.md)
 
 ## 文档导航
 
