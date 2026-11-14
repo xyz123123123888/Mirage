@@ -1,4 +1,5 @@
 # Mirage — Fabric 模组（实验性）
+# Ai生成
 
 > ⚠️ **标记不稳定（Exptl）**。jar 命名：\`mirage-fabric-Exptl-<MC版本>.jar\`
 > 例：\`mirage-fabric-Exptl-1.21.11.jar\`
