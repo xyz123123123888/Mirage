@@ -1,0 +1,24 @@
+name: Mirage
+version: 8.4.0-mirage
+main: mirage.mc.nms.MiragePlugin
+api-version: '1.13'
+load: STARTUP
+# Folia 会拒绝加载未声明 folia-supported 的插件。
+# 本插件不调用任何 MC API（世界/实体/区块/调度器），在 Folia 上确实能正常工作，
+# 因此声明为 folia-supported: true 是准确的。
+# 但请注意：内置的 Folia 支持已不再维护，请优先使用 mirage-folia.jar。
+folia-supported: true
+description: A MySQL-compatible proxy backed by H2.
+authors: [Mirage]
+website: https://github.com/mirage
+# 本插件对外提供 MySQL 服务，其他插件可 softdepend: [Mirage]
+# 以便在其 onEnable 时 Mirage 端口已就绪（load: STARTUP 已保证加载顺序）
+#
+# 兼容范围：Bukkit / Spigot / Paper / Leaf 等所有同源服务端。
+# Leaf 优化已内置——Mirage 不使用任何 MC API（世界/实体/区块/调度器），
+# 只跑自己的 MySQL 协议层与 H2，因此不需要针对 Leaf 单独适配。
+#
+# [Folia 支持已不再维护]
+# 本 jar 在 Folia 上仍可加载，但 Folia 的线程模型与 Paper 差异较大，
+# 维护成本高，且已有独立项目 mc/server/folia/ 专门跟进。
+# 插件启动时会检测 Folia 并打出醒目警告，提示改用 mirage-folia.jar。

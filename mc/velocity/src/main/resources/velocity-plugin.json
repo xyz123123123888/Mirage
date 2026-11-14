@@ -1,0 +1,8 @@
+{
+  "id": "mirage",
+  "name": "Mirage",
+  "version": "8.4.0-mirage",
+  "description": "A MySQL-compatible proxy backed by H2.",
+  "authors": ["Mirage"],
+  "main": "mirage.mc.proxy.MirageVelocityPlugin"
+}

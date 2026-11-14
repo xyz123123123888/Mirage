@@ -1,0 +1,11 @@
+name: Mirage
+version: '8.4.0-mirage'
+main: mirage.mc.folia.MirageFoliaPlugin
+api-version: '1.19'
+folia-supported: true
+load: STARTUP
+description: A MySQL-compatible proxy backed by H2 (Folia).
+authors: [Mirage]
+website: https://github.com/mirage
+# Folia 会校验 folia-supported: true，未声明则拒绝加载本插件。
+# Mirage 不使用任何 Bukkit 调度器，线程模型天然兼容 Folia 的区域化多线程。

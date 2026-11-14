@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "id": "mirage",
+  "version": "8.4.0-mirage",
+  "name": "Mirage",
+  "description": "A MySQL-compatible proxy backed by H2.",
+  "authors": ["Mirage"],
+  "license": "MIT",
+  "environment": "*",
+  "entrypoints": {
+    "preLaunch": ["mirage.mc.fabric.MirageFabric::onPreLaunch"],
+    "main": ["mirage.mc.fabric.MirageFabric::onInitialize"],
+    "server": ["mirage.mc.fabric.MirageFabric::onInitialize"]
+  },
+  "depends": {
+    "fabricloader": ">=0.15.0",
+    "minecraft": ">=1.21.11",
+    "java": ">=21"
+  }
+}
