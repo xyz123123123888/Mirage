@@ -32,6 +32,9 @@ function New-FatJar($classesDir, $h2Jar, $outJar) {
         }
     } finally { $zip.Dispose() }
     Set-Content -Path (Join-Path $tmp "MANIFEST.MF") -Value @("Manifest-Version: 1.0","Main-Class: mirage.core.FakeMysql") -Encoding ASCII
+    # 按 Apache-2.0 要求，jar 内附带 LICENSE 与 NOTICE
+    Copy-Item "LICENSE" (Join-Path $tmp "LICENSE") -Force
+    Copy-Item "NOTICE"  (Join-Path $tmp "NOTICE")  -Force
     if (Test-Path $outJar) { Remove-Item $outJar -Force }
     & $JAR cfm $outJar (Join-Path $tmp "MANIFEST.MF") -C $tmp .
     if ($LASTEXITCODE -ne 0) { throw "jar failed for $outJar" }

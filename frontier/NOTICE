@@ -1,0 +1,45 @@
+Mirage
+Copyright 2026 The Mirage Project
+https://github.com/xyz123123123888/Mirage
+
+This product is licensed under the Apache License, Version 2.0.
+See the LICENSE file for the full license text.
+
+--------------------------------------------------------------------------
+Bundled third-party components
+--------------------------------------------------------------------------
+
+1. H2 Database Engine
+   - Versions: 2.5.252 (mirage.jar, mirage-nms.jar, mirage-folia.jar,
+     mirage-velocity.jar), 1.4.200 (mirage-java8.jar)
+   - License: Mozilla Public License 2.0 (MPL-2.0)
+   - Homepage: https://h2database.com/
+   - Bundled as: org/h2/** inside the delivered fat jars
+   - MPL-2.0 is a file-level copyleft license. H2 is bundled unmodified;
+     any modification to H2 source files must be released under MPL-2.0.
+     Linking to H2 from Apache-2.0 code is permitted (MPL-2.0 Section 3.3).
+
+--------------------------------------------------------------------------
+Compile-time only dependencies (NOT bundled)
+--------------------------------------------------------------------------
+
+The following are referenced at compile time but are NOT included in any
+delivered jar. They are provided by the target runtime (Minecraft server
+or proxy) and are the responsibility of that runtime:
+
+- Paper API / Folia API  - GPL-3.0    (provided by PaperMC / Folia)
+- Velocity API           - Apache-2.0 (provided by VelocityPowered)
+- slf4j-api              - MIT
+- Google Guice           - Apache-2.0
+
+Because these are compile-time only and never redistributed by Mirage,
+no license from these projects propagates to Mirage or its users.
+
+--------------------------------------------------------------------------
+License compliance note
+--------------------------------------------------------------------------
+
+Mirage contains ZERO MySQL source code. It implements the MySQL wire
+protocol independently and stores data in H2. The "no GPL contamination"
+claim refers to the fact that no GPL-licensed code is bundled or linked
+into the delivered artifacts.
